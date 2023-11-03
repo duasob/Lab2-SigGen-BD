@@ -16,11 +16,10 @@ initial begin
         $readmemh("sinerom.mem", rom_array);
 end;
 
-always_ff @(posedge clk)
-
+always_ff @(posedge clk)begin
     dout1 <= rom_array [addr1];
     dout2 <= rom_array [addr2];
-
+end
 endmodule
 
     

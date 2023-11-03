@@ -1,0 +1,1 @@
+obj_dir/Vsinegen.cpp obj_dir/Vsinegen.h obj_dir/Vsinegen.mk obj_dir/Vsinegen__Slow.cpp obj_dir/Vsinegen__Syms.cpp obj_dir/Vsinegen__Syms.h obj_dir/Vsinegen__Trace.cpp obj_dir/Vsinegen__Trace__Slow.cpp obj_dir/Vsinegen__ver.d obj_dir/Vsinegen_classes.mk  : /usr/bin/verilator_bin /usr/bin/verilator_bin counter.sv rom.sv sinegen.sv 

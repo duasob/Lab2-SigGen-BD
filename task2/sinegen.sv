@@ -6,7 +6,8 @@ module sinegen #(
   input  logic             rst,      // reset 
   input  logic             en,       // enable
   input  logic [WIDTH-1:0] incr,        // value to preload
-  output logic [7:0]       dout       // count output
+  output logic [7:0]       dout1,
+  output logic [7:0]       dout2      // count output
 );
 
   logic  [WIDTH-1:0]       addr1;    // interconnect wire
@@ -16,14 +17,16 @@ counter myCounter (
   .rst (rst),
   .en (en),
   .incr(incr),
-  .count1 (addr1)
+  .count1 (addr1),
   .count2 (addr2)
 );
 
 rom myRom (
   .clk(clk),
-  .addr (addr),
-  .dout (dout)
+  .addr1(addr1),
+  .addr2(addr2),
+  .dout1(dout1),
+  .dout2(dout2)
 );
 
 endmodule
