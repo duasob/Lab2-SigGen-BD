@@ -16,7 +16,7 @@ always_ff @ (posedge clk) begin
     count2 <= {WIDTH{1'b0}};
   end else begin
     count1 <= count1 + {{WIDTH - 1{1'b0}}, en};
-    count2 <= count2 + incr; 
+    count2 <= count1 + incr; 
   end
 end
 endmodule

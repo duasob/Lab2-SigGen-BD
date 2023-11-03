@@ -71,24 +71,21 @@ VL_INLINE_OPT void Vsinegen::_sequent__TOP__1(Vsinegen__Syms* __restrict vlSymsp
     Vsinegen* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Variables
     CData/*7:0*/ __Vdly__sinegen__DOT__addr1;
-    CData/*7:0*/ __Vdly__sinegen__DOT__addr2;
     // Body
-    __Vdly__sinegen__DOT__addr2 = vlTOPp->sinegen__DOT__addr2;
     __Vdly__sinegen__DOT__addr1 = vlTOPp->sinegen__DOT__addr1;
-    if (vlTOPp->rst) {
-        __Vdly__sinegen__DOT__addr2 = 0U;
-        __Vdly__sinegen__DOT__addr1 = 0U;
-    } else {
-        __Vdly__sinegen__DOT__addr2 = (0xffU & ((IData)(vlTOPp->sinegen__DOT__addr2) 
-                                                + (IData)(vlTOPp->incr)));
-        __Vdly__sinegen__DOT__addr1 = (0xffU & ((IData)(vlTOPp->sinegen__DOT__addr1) 
-                                                + (IData)(vlTOPp->en)));
-    }
-    vlTOPp->dout2 = vlTOPp->sinegen__DOT__myRom__DOT__rom_array
-        [vlTOPp->sinegen__DOT__addr2];
     vlTOPp->dout1 = vlTOPp->sinegen__DOT__myRom__DOT__rom_array
         [vlTOPp->sinegen__DOT__addr1];
-    vlTOPp->sinegen__DOT__addr2 = __Vdly__sinegen__DOT__addr2;
+    vlTOPp->dout2 = vlTOPp->sinegen__DOT__myRom__DOT__rom_array
+        [vlTOPp->sinegen__DOT__addr2];
+    if (vlTOPp->rst) {
+        __Vdly__sinegen__DOT__addr1 = 0U;
+        vlTOPp->sinegen__DOT__addr2 = 0U;
+    } else {
+        __Vdly__sinegen__DOT__addr1 = (0xffU & ((IData)(vlTOPp->sinegen__DOT__addr1) 
+                                                + (IData)(vlTOPp->en)));
+        vlTOPp->sinegen__DOT__addr2 = (0xffU & ((IData)(vlTOPp->sinegen__DOT__addr1) 
+                                                + (IData)(vlTOPp->incr)));
+    }
     vlTOPp->sinegen__DOT__addr1 = __Vdly__sinegen__DOT__addr1;
 }
 
