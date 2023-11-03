@@ -47,10 +47,12 @@ int main(int argc, char **argv, char **env) {
     top->offset = abs(vbdValue());     // adjust delay by changing incr
 
     // plot RAM input/output, send sample to DAC buffer, and print cycle count
-    vbdPlot(int (top->mic_signal), 0, 255);
-    vbdPlot(int (top->delayed_signal), 0, 255);
+    vbdPlot(int (top->mic_signal)-50, 0, 255); //to be able to see one on top of the other
+    vbdPlot(int (top->delayed_signal)+50, 0, 255);
     vbdCycle(simcyc);
-
+    //std::cout << top->delayed_signal << std::endl;
+    //std::cout << top->addr1 << std::endl;
+    //std::cout << top->addr2 << std::endl;
     // either simulation finished, or 'q' is pressed
     if ((Verilated::gotFinish()) || (vbdGetkey()=='q')) 
       exit(0);
