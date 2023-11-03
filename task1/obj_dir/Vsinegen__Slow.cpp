@@ -1,22 +1,22 @@
 // Verilated -*- C++ -*-
 // DESCRIPTION: Verilator output: Design implementation internals
-// See Vcounter.h for the primary calling header
+// See Vsinegen.h for the primary calling header
 
-#include "Vcounter.h"
-#include "Vcounter__Syms.h"
+#include "Vsinegen.h"
+#include "Vsinegen__Syms.h"
 
 //==========
 
-VL_CTOR_IMP(Vcounter) {
-    Vcounter__Syms* __restrict vlSymsp = __VlSymsp = new Vcounter__Syms(this, name());
-    Vcounter* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+VL_CTOR_IMP(Vsinegen) {
+    Vsinegen__Syms* __restrict vlSymsp = __VlSymsp = new Vsinegen__Syms(this, name());
+    Vsinegen* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Reset internal values
     
     // Reset structure values
     _ctor_var_reset();
 }
 
-void Vcounter::__Vconfigure(Vcounter__Syms* vlSymsp, bool first) {
+void Vsinegen::__Vconfigure(Vsinegen__Syms* vlSymsp, bool first) {
     if (false && first) {}  // Prevent unused
     this->__VlSymsp = vlSymsp;
     if (false && this->__VlSymsp) {}  // Prevent unused
@@ -24,13 +24,13 @@ void Vcounter::__Vconfigure(Vcounter__Syms* vlSymsp, bool first) {
     Verilated::timeprecision(-12);
 }
 
-Vcounter::~Vcounter() {
+Vsinegen::~Vsinegen() {
     VL_DO_CLEAR(delete __VlSymsp, __VlSymsp = NULL);
 }
 
-void Vcounter::_initial__TOP__2(Vcounter__Syms* __restrict vlSymsp) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vcounter::_initial__TOP__2\n"); );
-    Vcounter* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+void Vsinegen::_initial__TOP__2(Vsinegen__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vsinegen::_initial__TOP__2\n"); );
+    Vsinegen* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Variables
     WData/*95:0*/ __Vtemp2[3];
     // Body
@@ -43,28 +43,28 @@ void Vcounter::_initial__TOP__2(Vcounter__Syms* __restrict vlSymsp) {
                  , 0, ~0ULL);
 }
 
-void Vcounter::_eval_initial(Vcounter__Syms* __restrict vlSymsp) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vcounter::_eval_initial\n"); );
-    Vcounter* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+void Vsinegen::_eval_initial(Vsinegen__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vsinegen::_eval_initial\n"); );
+    Vsinegen* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     vlTOPp->__Vclklast__TOP__clk = vlTOPp->clk;
     vlTOPp->_initial__TOP__2(vlSymsp);
 }
 
-void Vcounter::final() {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vcounter::final\n"); );
+void Vsinegen::final() {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vsinegen::final\n"); );
     // Variables
-    Vcounter__Syms* __restrict vlSymsp = this->__VlSymsp;
-    Vcounter* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    Vsinegen__Syms* __restrict vlSymsp = this->__VlSymsp;
+    Vsinegen* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
 }
 
-void Vcounter::_eval_settle(Vcounter__Syms* __restrict vlSymsp) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vcounter::_eval_settle\n"); );
-    Vcounter* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+void Vsinegen::_eval_settle(Vsinegen__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vsinegen::_eval_settle\n"); );
+    Vsinegen* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
 }
 
-void Vcounter::_ctor_var_reset() {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vcounter::_ctor_var_reset\n"); );
+void Vsinegen::_ctor_var_reset() {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vsinegen::_ctor_var_reset\n"); );
     // Body
     clk = VL_RAND_RESET_I(1);
     rst = VL_RAND_RESET_I(1);

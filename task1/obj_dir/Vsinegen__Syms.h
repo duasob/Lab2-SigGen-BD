@@ -4,16 +4,16 @@
 // Internal details; most calling programs do not need this header,
 // unless using verilator public meta comments.
 
-#ifndef _VCOUNTER__SYMS_H_
-#define _VCOUNTER__SYMS_H_  // guard
+#ifndef _VSINEGEN__SYMS_H_
+#define _VSINEGEN__SYMS_H_  // guard
 
 #include "verilated_heavy.h"
 
 // INCLUDE MODULE CLASSES
-#include "Vcounter.h"
+#include "Vsinegen.h"
 
 // SYMS CLASS
-class Vcounter__Syms : public VerilatedSyms {
+class Vsinegen__Syms : public VerilatedSyms {
   public:
     
     // LOCAL STATE
@@ -23,11 +23,11 @@ class Vcounter__Syms : public VerilatedSyms {
     bool __Vm_didInit;
     
     // SUBCELL STATE
-    Vcounter*                      TOPp;
+    Vsinegen*                      TOPp;
     
     // CREATORS
-    Vcounter__Syms(Vcounter* topp, const char* namep);
-    ~Vcounter__Syms() {}
+    Vsinegen__Syms(Vsinegen* topp, const char* namep);
+    ~Vsinegen__Syms() {}
     
     // METHODS
     inline const char* name() { return __Vm_namep; }

@@ -5,20 +5,20 @@
 // The class here is then constructed to instantiate the design.
 // See the Verilator manual for examples.
 
-#ifndef _VCOUNTER_H_
-#define _VCOUNTER_H_  // guard
+#ifndef _VSINEGEN_H_
+#define _VSINEGEN_H_  // guard
 
 #include "verilated_heavy.h"
 
 //==========
 
-class Vcounter__Syms;
-class Vcounter_VerilatedVcd;
+class Vsinegen__Syms;
+class Vsinegen_VerilatedVcd;
 
 
 //----------
 
-VL_MODULE(Vcounter) {
+VL_MODULE(Vsinegen) {
   public:
     
     // PORTS
@@ -42,18 +42,18 @@ VL_MODULE(Vcounter) {
     
     // INTERNAL VARIABLES
     // Internals; generally not touched by application code
-    Vcounter__Syms* __VlSymsp;  // Symbol table
+    Vsinegen__Syms* __VlSymsp;  // Symbol table
     
     // CONSTRUCTORS
   private:
-    VL_UNCOPYABLE(Vcounter);  ///< Copying not allowed
+    VL_UNCOPYABLE(Vsinegen);  ///< Copying not allowed
   public:
     /// Construct the model; called by application code
     /// The special name  may be used to make a wrapper with a
     /// single model invisible with respect to DPI scope names.
-    Vcounter(const char* name = "TOP");
+    Vsinegen(const char* name = "TOP");
     /// Destroy the model; called (often implicitly) by application code
-    ~Vcounter();
+    ~Vsinegen();
     /// Trace signals in the model; called by application code
     void trace(VerilatedVcdC* tfp, int levels, int options = 0);
     
@@ -70,24 +70,24 @@ VL_MODULE(Vcounter) {
     
     // INTERNAL METHODS
   private:
-    static void _eval_initial_loop(Vcounter__Syms* __restrict vlSymsp);
+    static void _eval_initial_loop(Vsinegen__Syms* __restrict vlSymsp);
   public:
-    void __Vconfigure(Vcounter__Syms* symsp, bool first);
+    void __Vconfigure(Vsinegen__Syms* symsp, bool first);
   private:
-    static QData _change_request(Vcounter__Syms* __restrict vlSymsp);
-    static QData _change_request_1(Vcounter__Syms* __restrict vlSymsp);
+    static QData _change_request(Vsinegen__Syms* __restrict vlSymsp);
+    static QData _change_request_1(Vsinegen__Syms* __restrict vlSymsp);
     void _ctor_var_reset() VL_ATTR_COLD;
   public:
-    static void _eval(Vcounter__Syms* __restrict vlSymsp);
+    static void _eval(Vsinegen__Syms* __restrict vlSymsp);
   private:
 #ifdef VL_DEBUG
     void _eval_debug_assertions();
 #endif  // VL_DEBUG
   public:
-    static void _eval_initial(Vcounter__Syms* __restrict vlSymsp) VL_ATTR_COLD;
-    static void _eval_settle(Vcounter__Syms* __restrict vlSymsp) VL_ATTR_COLD;
-    static void _initial__TOP__2(Vcounter__Syms* __restrict vlSymsp) VL_ATTR_COLD;
-    static void _sequent__TOP__1(Vcounter__Syms* __restrict vlSymsp);
+    static void _eval_initial(Vsinegen__Syms* __restrict vlSymsp) VL_ATTR_COLD;
+    static void _eval_settle(Vsinegen__Syms* __restrict vlSymsp) VL_ATTR_COLD;
+    static void _initial__TOP__2(Vsinegen__Syms* __restrict vlSymsp) VL_ATTR_COLD;
+    static void _sequent__TOP__1(Vsinegen__Syms* __restrict vlSymsp);
   private:
     static void traceChgSub0(void* userp, VerilatedVcd* tracep);
     static void traceChgTop0(void* userp, VerilatedVcd* tracep);

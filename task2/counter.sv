@@ -6,7 +6,8 @@ module counter #(
     input   logic               rst,
     input   logic               en,
     input  logic [WIDTH-1:0]    incr,
-    output  logic  [WIDTH-1:0]  count
+    output  logic  [WIDTH-1:0]  count1,
+    output  logic  [WIDTH-1:0]  count2
 );
 
 always_ff @ (posedge clk) begin

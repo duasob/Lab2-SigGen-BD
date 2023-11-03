@@ -1,16 +1,16 @@
 // Verilated -*- C++ -*-
 // DESCRIPTION: Verilator output: Design implementation internals
-// See Vcounter.h for the primary calling header
+// See Vsinegen.h for the primary calling header
 
-#include "Vcounter.h"
-#include "Vcounter__Syms.h"
+#include "Vsinegen.h"
+#include "Vsinegen__Syms.h"
 
 //==========
 
-void Vcounter::eval_step() {
-    VL_DEBUG_IF(VL_DBG_MSGF("+++++TOP Evaluate Vcounter::eval\n"); );
-    Vcounter__Syms* __restrict vlSymsp = this->__VlSymsp;  // Setup global symbol table
-    Vcounter* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+void Vsinegen::eval_step() {
+    VL_DEBUG_IF(VL_DBG_MSGF("+++++TOP Evaluate Vsinegen::eval\n"); );
+    Vsinegen__Syms* __restrict vlSymsp = this->__VlSymsp;  // Setup global symbol table
+    Vsinegen* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
 #ifdef VL_DEBUG
     // Debug assertions
     _eval_debug_assertions();
@@ -40,7 +40,7 @@ void Vcounter::eval_step() {
     } while (VL_UNLIKELY(__Vchange));
 }
 
-void Vcounter::_eval_initial_loop(Vcounter__Syms* __restrict vlSymsp) {
+void Vsinegen::_eval_initial_loop(Vsinegen__Syms* __restrict vlSymsp) {
     vlSymsp->__Vm_didInit = true;
     _eval_initial(vlSymsp);
     vlSymsp->__Vm_activity = true;
@@ -66,9 +66,9 @@ void Vcounter::_eval_initial_loop(Vcounter__Syms* __restrict vlSymsp) {
     } while (VL_UNLIKELY(__Vchange));
 }
 
-VL_INLINE_OPT void Vcounter::_sequent__TOP__1(Vcounter__Syms* __restrict vlSymsp) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vcounter::_sequent__TOP__1\n"); );
-    Vcounter* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+VL_INLINE_OPT void Vsinegen::_sequent__TOP__1(Vsinegen__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vsinegen::_sequent__TOP__1\n"); );
+    Vsinegen* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     vlTOPp->dout = vlTOPp->sinegen__DOT__myRom__DOT__rom_array
         [vlTOPp->sinegen__DOT__addr];
@@ -79,9 +79,9 @@ VL_INLINE_OPT void Vcounter::_sequent__TOP__1(Vcounter__Syms* __restrict vlSymsp
                                             + (IData)(vlTOPp->sinegen__DOT__addr))));
 }
 
-void Vcounter::_eval(Vcounter__Syms* __restrict vlSymsp) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vcounter::_eval\n"); );
-    Vcounter* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+void Vsinegen::_eval(Vsinegen__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vsinegen::_eval\n"); );
+    Vsinegen* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     if (((IData)(vlTOPp->clk) & (~ (IData)(vlTOPp->__Vclklast__TOP__clk)))) {
         vlTOPp->_sequent__TOP__1(vlSymsp);
@@ -90,16 +90,16 @@ void Vcounter::_eval(Vcounter__Syms* __restrict vlSymsp) {
     vlTOPp->__Vclklast__TOP__clk = vlTOPp->clk;
 }
 
-VL_INLINE_OPT QData Vcounter::_change_request(Vcounter__Syms* __restrict vlSymsp) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vcounter::_change_request\n"); );
-    Vcounter* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+VL_INLINE_OPT QData Vsinegen::_change_request(Vsinegen__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vsinegen::_change_request\n"); );
+    Vsinegen* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     return (vlTOPp->_change_request_1(vlSymsp));
 }
 
-VL_INLINE_OPT QData Vcounter::_change_request_1(Vcounter__Syms* __restrict vlSymsp) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vcounter::_change_request_1\n"); );
-    Vcounter* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+VL_INLINE_OPT QData Vsinegen::_change_request_1(Vsinegen__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vsinegen::_change_request_1\n"); );
+    Vsinegen* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     // Change detection
     QData __req = false;  // Logically a bool
@@ -107,8 +107,8 @@ VL_INLINE_OPT QData Vcounter::_change_request_1(Vcounter__Syms* __restrict vlSym
 }
 
 #ifdef VL_DEBUG
-void Vcounter::_eval_debug_assertions() {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vcounter::_eval_debug_assertions\n"); );
+void Vsinegen::_eval_debug_assertions() {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vsinegen::_eval_debug_assertions\n"); );
     // Body
     if (VL_UNLIKELY((clk & 0xfeU))) {
         Verilated::overWidthError("clk");}

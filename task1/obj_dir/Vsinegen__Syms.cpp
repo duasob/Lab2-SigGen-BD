@@ -1,13 +1,13 @@
 // Verilated -*- C++ -*-
 // DESCRIPTION: Verilator output: Symbol table implementation internals
 
-#include "Vcounter__Syms.h"
-#include "Vcounter.h"
+#include "Vsinegen__Syms.h"
+#include "Vsinegen.h"
 
 
 
 // FUNCTIONS
-Vcounter__Syms::Vcounter__Syms(Vcounter* topp, const char* namep)
+Vsinegen__Syms::Vsinegen__Syms(Vsinegen* topp, const char* namep)
     // Setup locals
     : __Vm_namep(namep)
     , __Vm_activity(false)

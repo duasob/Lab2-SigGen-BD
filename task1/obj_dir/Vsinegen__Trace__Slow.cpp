@@ -1,19 +1,19 @@
 // Verilated -*- C++ -*-
 // DESCRIPTION: Verilator output: Tracing implementation internals
 #include "verilated_vcd_c.h"
-#include "Vcounter__Syms.h"
+#include "Vsinegen__Syms.h"
 
 
 //======================
 
-void Vcounter::trace(VerilatedVcdC* tfp, int, int) {
+void Vsinegen::trace(VerilatedVcdC* tfp, int, int) {
     tfp->spTrace()->addInitCb(&traceInit, __VlSymsp);
     traceRegister(tfp->spTrace());
 }
 
-void Vcounter::traceInit(void* userp, VerilatedVcd* tracep, uint32_t code) {
+void Vsinegen::traceInit(void* userp, VerilatedVcd* tracep, uint32_t code) {
     // Callback from tracep->open()
-    Vcounter__Syms* __restrict vlSymsp = static_cast<Vcounter__Syms*>(userp);
+    Vsinegen__Syms* __restrict vlSymsp = static_cast<Vsinegen__Syms*>(userp);
     if (!Verilated::calcUnusedSigs()) {
         VL_FATAL_MT(__FILE__, __LINE__, __FILE__,
                         "Turning on wave traces requires Verilated::traceEverOn(true) call before time 0.");
@@ -21,25 +21,25 @@ void Vcounter::traceInit(void* userp, VerilatedVcd* tracep, uint32_t code) {
     vlSymsp->__Vm_baseCode = code;
     tracep->module(vlSymsp->name());
     tracep->scopeEscape(' ');
-    Vcounter::traceInitTop(vlSymsp, tracep);
+    Vsinegen::traceInitTop(vlSymsp, tracep);
     tracep->scopeEscape('.');
 }
 
 //======================
 
 
-void Vcounter::traceInitTop(void* userp, VerilatedVcd* tracep) {
-    Vcounter__Syms* __restrict vlSymsp = static_cast<Vcounter__Syms*>(userp);
-    Vcounter* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+void Vsinegen::traceInitTop(void* userp, VerilatedVcd* tracep) {
+    Vsinegen__Syms* __restrict vlSymsp = static_cast<Vsinegen__Syms*>(userp);
+    Vsinegen* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     {
         vlTOPp->traceInitSub0(userp, tracep);
     }
 }
 
-void Vcounter::traceInitSub0(void* userp, VerilatedVcd* tracep) {
-    Vcounter__Syms* __restrict vlSymsp = static_cast<Vcounter__Syms*>(userp);
-    Vcounter* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+void Vsinegen::traceInitSub0(void* userp, VerilatedVcd* tracep) {
+    Vsinegen__Syms* __restrict vlSymsp = static_cast<Vsinegen__Syms*>(userp);
+    Vsinegen* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     const int c = vlSymsp->__Vm_baseCode;
     if (false && tracep && c) {}  // Prevent unused
     // Body
@@ -70,7 +70,7 @@ void Vcounter::traceInitSub0(void* userp, VerilatedVcd* tracep) {
     }
 }
 
-void Vcounter::traceRegister(VerilatedVcd* tracep) {
+void Vsinegen::traceRegister(VerilatedVcd* tracep) {
     // Body
     {
         tracep->addFullCb(&traceFullTop0, __VlSymsp);
@@ -79,18 +79,18 @@ void Vcounter::traceRegister(VerilatedVcd* tracep) {
     }
 }
 
-void Vcounter::traceFullTop0(void* userp, VerilatedVcd* tracep) {
-    Vcounter__Syms* __restrict vlSymsp = static_cast<Vcounter__Syms*>(userp);
-    Vcounter* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+void Vsinegen::traceFullTop0(void* userp, VerilatedVcd* tracep) {
+    Vsinegen__Syms* __restrict vlSymsp = static_cast<Vsinegen__Syms*>(userp);
+    Vsinegen* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     {
         vlTOPp->traceFullSub0(userp, tracep);
     }
 }
 
-void Vcounter::traceFullSub0(void* userp, VerilatedVcd* tracep) {
-    Vcounter__Syms* __restrict vlSymsp = static_cast<Vcounter__Syms*>(userp);
-    Vcounter* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+void Vsinegen::traceFullSub0(void* userp, VerilatedVcd* tracep) {
+    Vsinegen__Syms* __restrict vlSymsp = static_cast<Vsinegen__Syms*>(userp);
+    Vsinegen* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     vluint32_t* const oldp = tracep->oldp(vlSymsp->__Vm_baseCode);
     if (false && oldp) {}  // Prevent unused
     // Body

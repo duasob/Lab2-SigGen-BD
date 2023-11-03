@@ -1,12 +1,12 @@
 // Verilated -*- C++ -*-
 // DESCRIPTION: Verilator output: Tracing implementation internals
 #include "verilated_vcd_c.h"
-#include "Vcounter__Syms.h"
+#include "Vsinegen__Syms.h"
 
 
-void Vcounter::traceChgTop0(void* userp, VerilatedVcd* tracep) {
-    Vcounter__Syms* __restrict vlSymsp = static_cast<Vcounter__Syms*>(userp);
-    Vcounter* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+void Vsinegen::traceChgTop0(void* userp, VerilatedVcd* tracep) {
+    Vsinegen__Syms* __restrict vlSymsp = static_cast<Vsinegen__Syms*>(userp);
+    Vsinegen* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Variables
     if (VL_UNLIKELY(!vlSymsp->__Vm_activity)) return;
     // Body
@@ -15,9 +15,9 @@ void Vcounter::traceChgTop0(void* userp, VerilatedVcd* tracep) {
     }
 }
 
-void Vcounter::traceChgSub0(void* userp, VerilatedVcd* tracep) {
-    Vcounter__Syms* __restrict vlSymsp = static_cast<Vcounter__Syms*>(userp);
-    Vcounter* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+void Vsinegen::traceChgSub0(void* userp, VerilatedVcd* tracep) {
+    Vsinegen__Syms* __restrict vlSymsp = static_cast<Vsinegen__Syms*>(userp);
+    Vsinegen* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     vluint32_t* const oldp = tracep->oldp(vlSymsp->__Vm_baseCode + 1);
     if (false && oldp) {}  // Prevent unused
     // Body
@@ -31,9 +31,9 @@ void Vcounter::traceChgSub0(void* userp, VerilatedVcd* tracep) {
     }
 }
 
-void Vcounter::traceCleanup(void* userp, VerilatedVcd* /*unused*/) {
-    Vcounter__Syms* __restrict vlSymsp = static_cast<Vcounter__Syms*>(userp);
-    Vcounter* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+void Vsinegen::traceCleanup(void* userp, VerilatedVcd* /*unused*/) {
+    Vsinegen__Syms* __restrict vlSymsp = static_cast<Vsinegen__Syms*>(userp);
+    Vsinegen* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     {
         vlSymsp->__Vm_activity = false;
