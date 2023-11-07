@@ -2,14 +2,14 @@
 #include "verilated_vcd_c.h"
 #include "Vsinegen.h"
 
-#include "vbuddy.cpp"     // include vbuddy code
+#include "vbuddy.cpp"     
 #define ADDRESS_WIDTH 8
 #define ROM_SZ 256
 
 int main(int argc, char **argv, char **env) {
   int i;     
   int clk;       
-
+  bool seeSignal2 = false;
   Verilated::commandArgs(argc, argv);
   Vsinegen* top = new Vsinegen;
   Verilated::traceEverOn(true);
@@ -18,7 +18,7 @@ int main(int argc, char **argv, char **env) {
   tfp->open ("sinegen.vcd");
  
   if (vbdOpen()!=1) return(-1);
-  vbdHeader("L2T1: SigGen");
+  vbdHeader("brunoWaves");
 
   top->clk = 1;
   top->rst = 0;
@@ -32,12 +32,19 @@ int main(int argc, char **argv, char **env) {
       top->clk = !top->clk;
       top->eval ();
     }
-    
+    //---------------------------- but it doesn't work so nicely (need multiple "2"
+    if(vbdGetkey()=='2'){
+      seeSignal2 = !seeSignal2;
+      std::cout << "changed" <<std::endl;
+    }
     top->incr = vbdValue();
-    // plot ROM output and print cycle count
-
+   //---------------------------- we can control any value with computer keys! -> we could make games
     vbdPlot(int (top->dout1), 0, 255);
-    //vbdPlot(int (top->dout2), 0, 255);
+    
+    if(seeSignal2){
+      vbdPlot(int (top->dout2), 0, 255);
+    }
+    
 
     //std::cout << "1 : " << top->dout1 <<std::endl;
     //std::cout << "2 : " << top->dout2 <<std::endl;
