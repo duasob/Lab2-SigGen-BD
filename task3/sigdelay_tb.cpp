@@ -47,7 +47,7 @@ int main(int argc, char **argv, char **env) {
     top->offset = abs(vbdValue());     // adjust delay by changing incr
 
     // plot RAM input/output, send sample to DAC buffer, and print cycle count
-    vbdPlot(int (top->mic_signal)-50, 0, 255); //to be able to see one on top of the other
+    vbdPlot(int (top->mic_signal)-50, 0, 255); //just moved the signals to be able to see one on top of the other
     vbdPlot(int (top->delayed_signal)+50, 0, 255);
     vbdCycle(simcyc);
     //std::cout << top->delayed_signal << std::endl;
