@@ -10,6 +10,7 @@
 int main(int argc, char **argv, char **env) {
   int simcyc;     // simulation clock count
   int tick;       // each clk cycle has two ticks for two edges
+  bool seeSignal2 = true;
 
   Verilated::commandArgs(argc, argv);
   // init top verilog instance
@@ -45,10 +46,20 @@ int main(int argc, char **argv, char **env) {
     }
     top->mic_signal = vbdMicValue();
     top->offset = abs(vbdValue());     // adjust delay by changing incr
+    
+    //---------------------------- but it doesn't work so nicely (need multiple "2"
+    if(vbdGetkey()=='2'){ 
+      seeSignal2 = !seeSignal2;
+      std::cout << "changed" <<std::endl;
+    }
+   //---------------------------- we can control any value with computer keys! -> we could make games
 
     // plot RAM input/output, send sample to DAC buffer, and print cycle count
     vbdPlot(int (top->mic_signal)-50, 0, 255); //just moved the signals to be able to see one on top of the other
-    vbdPlot(int (top->delayed_signal)+50, 0, 255);
+    if(seeSignal2){
+      vbdPlot(int (top->delayed_signal)+50, 0, 255);
+    }
+    
     vbdCycle(simcyc);
     //std::cout << top->delayed_signal << std::endl;
     //std::cout << top->addr1 << std::endl;
