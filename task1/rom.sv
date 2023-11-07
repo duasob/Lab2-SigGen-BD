@@ -16,10 +16,8 @@ end;
 
 always_ff @(posedge clk)
 
-    dout <= rom_array [addr];
+    dout <= rom_array [addr]; 
 
 endmodule
-
-    
 
     

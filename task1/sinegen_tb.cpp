@@ -35,7 +35,7 @@ int main(int argc, char **argv, char **env) {
       top->clk = !top->clk;
       top->eval ();
     }
-  //---------------------------- but it doesn't work so nicely
+  //---------------------------- but it doesn't work so nicely (need multiple "e")
   if(vbdGetkey()=='e'){
     top->en = !top->en;
     std::cout << "toggled" << std::endl;
